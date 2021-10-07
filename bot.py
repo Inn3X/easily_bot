@@ -32,4 +32,4 @@ async def команды(ctx,*args):
     embed.add_field(name = 'Префикс:"!"' , value= Comds)
     await ctx.send(embed = embed)
 #@bot.command(pass_context = True)
-bot.run('ODk1Njc1ODQwOTUwNTgzMzM2.YV8BIQ.w-C1xR3imkNOZQWHt5aj4rVaySw')
+bot.run(process.env.BOT_TOKEN)
