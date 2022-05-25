@@ -10,10 +10,10 @@ bot = MyClient()
 bot = commands.Bot(command_prefix='!')
 @bot.event
 async def on_message_edit(before,after): #event when message edit
-    channel = bot.get_channel(894939865026805801)
+    channel = bot.get_channel('logs channel here')
     if before.content == after.content:
         return
-    await channel.send(f" **Старое сообщение**:`\n{before.content}`\n**Новое сообщение**:\n`{after.content}`")
+    await channel.send(f" **Old message**:`\n{before.content}`\n**New message**:\n`{after.content}`")
 
 @bot.command(pass_context = True) #checking what u wrote, if it's 'ban' then bot will be work on this command
 @commands.has_permissions( administrator = True)
@@ -23,7 +23,7 @@ async def ban(ctx,member: discord.Member,*,reason = None): #command "ban"
     await member.ban(reason = reason)
     embed.set_author(name = member.name,icon_url = member.avatar_url)
     embed.add_field(name ='Ban user', value = 'Banned user : {}'.format (member.mention))
-    embed.set_footer(text = 'Был забанен администратором {}'.format(ctx.author.name), icon_url = ctx.author.avatar_url )
+    embed.set_footer(text = 'Was banned by: {}'.format(ctx.author.name), icon_url = ctx.author.avatar_url )
     await ctx.send(embed = embed)
 @bot.command(pass_context = True) #Also checking command
 async def commands(ctx,*args):
