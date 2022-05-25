@@ -28,8 +28,8 @@ async def ban(ctx,member: discord.Member,*,reason = None): #command "ban"
 @bot.command(pass_context = True) #Also checking command
 async def commands(ctx,*args):
     Comds = ("**there's no here**") #command "commands"
-    embed = discord.Embed(title = 'Команды:',colour = discord.Color.teal())
-    embed.add_field(name = 'Префикс:"!"' , value= Comds)
+    embed = discord.Embed(title = 'Commands:',colour = discord.Color.teal())
+    embed.add_field(name = 'Prefix:"!"' , value= Comds)
     await ctx.send(embed = embed)
 #@bot.command(pass_context = True)
 bot.run(process.env.BOT_TOKEN)
